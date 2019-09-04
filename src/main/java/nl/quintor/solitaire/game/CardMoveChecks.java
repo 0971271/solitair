@@ -30,8 +30,14 @@ public class CardMoveChecks {
      * @param input the user input, split on the space character, cast to uppercase
      * @throws MoveException on syntax error
      */
-    public static void checkPlayerInput(String[] input) throws MoveException{
-        // TODO: Write implementation
+    public static void checkPlayerInput(String[] input) throws MoveException {
+        if (!input[1].matches("^[A-G][1-9]0?|S[A-D]|O$")) {
+            throw new MoveException("Invalid Move syntax. \"" + input[1] + "\" is not a valid source location.\nSee H̲elp for instructions.");
+        }
+
+        if (!input[2].matches("^[A-G]0?|S[A-D]|O$")) {
+            throw new MoveException("Invalid Move syntax. \"" + input[2] + "\" is not a valid destination location.\nSee H̲elp for instructions.");
+        }
     }
 
     /**
