@@ -31,7 +31,7 @@ public class CardMoveChecks {
      * @throws MoveException on syntax error
      */
     public static void checkPlayerInput(String[] input) throws MoveException {
-        if (!input[1].matches("^[A-G][1-9]0?|S[A-D]|O$")) {
+        if (!input[1].matches("^[A-G](10|[1-9])|S[A-D]|O$")) {
             throw new MoveException("Invalid Move syntax. \"" + input[1] + "\" is not a valid source location.\nSee H̲elp for instructions.");
         }
 
