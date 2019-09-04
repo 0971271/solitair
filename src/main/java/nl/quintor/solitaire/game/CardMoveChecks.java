@@ -35,7 +35,7 @@ public class CardMoveChecks {
             throw new MoveException("Invalid Move syntax. \"" + input[1] + "\" is not a valid source location.\nSee H̲elp for instructions.");
         }
 
-        if (!input[2].matches("^[A-G]0?|S[A-D]|O$")) {
+        if (!input[2].matches("^[A-G]|S[A-D]|O$")) {
             throw new MoveException("Invalid Move syntax. \"" + input[2] + "\" is not a valid destination location.\nSee H̲elp for instructions.");
         }
     }
