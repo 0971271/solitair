@@ -24,8 +24,8 @@ public class GameStateController {
      * @return a new GameState object, ready to go
      */
     public static GameState init(){
-        // TODO: Write implementation
-        return new GameState();
+        GameState gameState = new GameState();
+        return gameState;
     }
 
     /**
@@ -35,7 +35,8 @@ public class GameStateController {
      * @param gameState GameState object that the score penalty is applied to
      */
     public static void applyTimePenalty(GameState gameState){
-        // TODO: Write implementation
+        long seconds = Duration.between(gameState.getStartTime(), gameState.getEndTime()).getSeconds();
+        gameState.setTimeScore(seconds / 10 * -2);
     }
 
     /**
@@ -45,7 +46,11 @@ public class GameStateController {
      * @param gameState GameState object that the score penalty is applied to
      */
     public static void applyBonusScore(GameState gameState){
-        // TODO: Write implementation
+        long seconds = Duration.between(gameState.getStartTime(), gameState.getEndTime()).getSeconds();
+
+        if (seconds > 30) {
+            gameState.setTimeScore(700000 / seconds);
+        }
     }
 
     /**
@@ -56,6 +61,16 @@ public class GameStateController {
      * @param gameState GameState object of which it is determined if the game has been won
      */
     public static void detectGameWin(GameState gameState){
-        // TODO: Write implementation
+        for (Deck deck : gameState.getColumns().values()) {
+            if (deck.getInvisibleCards() > 0) {
+                return;
+            }
+
+            if (deck.getDeckType() == DeckType.STOCK && !deck.isEmpty()) {
+                return;
+            }
+        }
+
+        gameState.setGameWon(true);
     }
 }
