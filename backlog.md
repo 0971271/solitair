@@ -19,8 +19,8 @@ on the work your team sees.
 | 9     | Write the implementations for GameStateParser printRow method| Moderate
 | 10    | Write the implementations for GameStateParser parseGameState method| DIfficult
 | 11    | Write the implementation for the GameStateController winDetection method| Moderate
-| 12    | Write the implementation for the GameStateController applyBonusScore method| Moderate
-| 13    | Write the implementation for the GameStateController applyTimePenalty method| Moderate
+| 12 X   | Write the implementation for the GameStateController applyBonusScore method| Moderate
+| 13 X   | Write the implementation for the GameStateController applyTimePenalty method| Moderate
 | 14    | Write the implementation for the GameStateController init method| Moderate
 | 15    | Refine with the team which task to add to let all tests pass| Moderate
 
